@@ -1,0 +1,47 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% if user.is_staff %}
+        <form id="post_form" method="post" action="{% url 'blog:add_post' %}">
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+
+            <div class="text-box">
+            <h2>Add a post</h2>
+            <br />
+                <ol>
+                    {% for field in form.visible_fields %}
+                        {{ field.errors }}
+                        {{ field.label }}{{ field.help_text }}
+                        <li>{{ field }}</li>
+                        <br />
+                    {% endfor %}
+                </ol>
+                <br />
+                <input type="submit" name="submit_post" value="Create post" />
+            </div>
+        </form>
+    {% else %}
+        You must be an admin to add pages.
+    {% endif %}
+{% endblock %}
+
+{% block sidebar %}
+    {% if user.is_staff %}
+        <div class="text-box">
+            <h4>Add image</h4>
+            <button onclick="openImagePopup()">Upload (opens form in a new pop-up window)</button>
+        </div>
+
+    {% endif %}
+{% endblock %}
+
+{% block js %}
+    <script>
+        function openImagePopup() {
+            window.open("{% url 'blog:upload_image' %}", "Upload image", "height=400,width=500");
+        }
+    </script>
+{% endblock %}

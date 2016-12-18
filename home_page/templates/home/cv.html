@@ -1,0 +1,200 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+    <div class="title">
+        Curriculum Vitae
+    </div>
+    <br/>
+
+    <p>
+        My academic background is in physics, but I have strong interests in computer programming and
+        technology. My combined physics and computer background give me a unique set of problem-solving skills.
+        I enjoy learning about new things and spend time on side-projects in order to gain a better
+        understanding of a new idea or to learn a new technology.
+    </p>
+    <br/>
+
+    <div class="text-box">
+        <h2>Education</h2>
+        <br/>
+        <div style="float: left;">
+            2006 - 2009
+            <br/>
+            2009
+        </div>
+        <div style="float:left; padding-left:7.5em;">
+            Helsingin Suomalainen Yhteiskoulu, International Baccalaureate
+            <br/>
+            University of Helsinki (UH), majoring in physics
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="text-box">
+        <h2>Work experience</h2>
+        <br/>
+        <div style="float:left;">
+            Summer 2012
+            <br/>
+            September-December 2012
+            <br/>
+            Summer 2013
+            <br/>
+            Autumn 2013 - Spring 2014
+            <br/>
+            July 2014 - May 2015
+        </div>
+        <div style="float:left; padding-left:1em;">
+            Full-time research assistant at the UH Material Physics laboratory
+            <br/>
+            Part-time research assistant at the UH Material Physics laboratory
+            <br/>
+            Full-time research assistant at the UH Material Physics laboratory
+            <br/>
+            Part-time research assistant at the UH Material Physics laboratory
+            <br>
+            Civil servant at the Helsinki Center of Excellence in Experimental & Computational <br/> Developmental Biology
+        </div>
+        <div style="clear:both;"></div>
+        <br/>
+    </div>
+
+    <br/>
+
+    <div class="text-box">
+        <h1>Skills</h1>
+        <br/>
+        <h4>Languages</h4>
+        <br/>
+        <div style="float: left;">
+            English
+            <br/>
+            Finnish
+        </div>
+        <div style="float:left; padding-left:10em;">
+            Mother tongue
+            <br/>
+            Fluent
+        </div>
+        <div style="clear: both;"></div>
+        <br/>
+
+        <h4>Programming languages</h4>
+        <br/>
+        <div style="float: left;">
+            C/C++
+            <br/>
+            Python
+            <br/>
+            Lua
+            <br/>
+            Javascript
+            <br/>
+            Java
+            <br/>
+            Rust
+        </div>
+        <div style="float:left; padding-left:9em;">
+            Used fairly extensively
+            <br/>
+            <br/>
+            Used as both embedded scripting language and as a stand-alone language
+            <br/>
+            <!--Mid-level use-->
+            <br/>
+            Not very extensive use
+            <br/>
+            Introduced myself to the basics, following up on development
+        </div>
+        <div style="clear: both;"></div>
+        <br/>
+
+        <h4>Tools</h4>
+        <br/>
+        <div style="float:left;">
+            \( \LaTeX \)
+            <br/>
+            MATLAB/Octave
+            <br/>
+            Git
+            <br/>
+            CMake
+            <br/>
+        </div>
+        <div style="float:left;padding-left:9.5em;">
+            Good
+            <br/>
+            Only the basics
+            <br/>
+            Good
+            <br/>
+            Only the basics
+            <br/>
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="text-box">
+        <h2>Projects</h2>
+        <br/>
+        <p><b>This website and the associated blog</b></p>
+        <p>
+            <b>secon</b>: economy simulation using autonomous agents, written in Lua. The goal was to see the law of
+            supply & demand in effect when the price of specific commodities was jacked up artificially.
+            The source code is available on github. I also gave a brief
+            <a href="http://localhost:8000/blog/media/pdf/esitelma.pdf">presentation</a> on the topic (in Finnish only,
+            unfortunately).
+        </p>
+        <p><b>Morphoviewer.js</b>: a WebGL renderer capable of rendering objects and displaying various different surface properties.</p>
+        <p><b>SurfacePy</b>: A C++ and Python library for triangulating 3d objects, calculating different surface properties, and outputting binary files for use by Morphoviewer.js</p>
+        <!-- TODO: change the above description. It sounds stupid that I wrote a triangulation library and use a triangulation library... :P -->
+    </div>
+
+    <br/>
+
+    <div class="text-box">
+        <h2>Interests & hobbies</h2>
+        <br/>
+        <ul>
+            <li>Road cycling</li>
+            <li>Photography</li>
+            <li>3d graphics</li>
+            <li>3d printing</li>
+            <li>Aviation & flight simulators</li>
+        </ul>
+    </div>
+
+    <br/>
+
+    <div class="text-box">
+        <h2>Extracurricular activities</h2>
+        <br/>
+        <div style="float: left;">
+            2010
+            <br/>
+            2011
+            <br/>
+            <br/>
+            <br/>
+            2012
+        </div>
+        <div style="float:left; padding-left:7.5em;">
+            International tutor
+            <br/>
+            International tutor
+            <br/>
+            Candidate for the UH student union representative council
+            <br/>
+            Member of the Limes government and officer at Resonanssi
+            <br/>
+            International tutor
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+{% endblock %}

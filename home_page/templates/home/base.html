@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    {% block title %}
+        <title>Johann's homepage</title>
+    {% endblock %}
+    <!-- Social media icons -->
+    <link href="{% static 'css/zocial.css' %}" rel="stylesheet">
+    <!-- My style -->
+    <link href="{% static 'css/reset.css' %}" rel="stylesheet">
+    <link href="{% static 'css/identity.css' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'css/lightbox.css' %}" rel="stylesheet"><!-- for lightbox v2 -->
+</head>
+<body>
+
+<div class="wrapper">
+    <header style="height:100px;">
+        <nav style="width: 100%;">
+            <ul class="inline-list background-gradient">
+                <li><a class="text-button background-gradient" style="font-weight:bold;" href="{% url 'home:index' %}">Johann Muszynski</a></li>
+                <li><a class="text-button background-gradient" href="{% url 'blog:index' %}">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+    <div style="height:40px;"></div>
+    <div class="push"></div>
+</div>
+
+<div class="footer background-gradient">
+    <div style="width: 960px; padding-top: 28px; padding-bottom:20px; padding-left: 40px;">
+        &copy; Johann Muszynski 2015 // Find me on: &nbsp;
+        <a class="zocial github" target="_blank" href="https://github.com/Nelarius">Github</a>
+        <!--a class="zocial twitter" target="_blank" href="https://twitter.com/Nelarius">Twitter</a-->
+        <a class="zocial linkedin" target="_blank" href="https://www.linkedin.com/in/nelarius">LinkedIn</a>
+        <!--a class="zocial googleplus" target="_blank" href="https://plus.google.com/104915798583653424016/posts">Google+</a-->
+    </div>
+</div>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-65809105-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+{% block js %}
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+    <div class="main">
+        <!-- drafts -->
+        <ul>
+            {% for post in drafts.object_list %}
+                <div class="post">
+                    <div class="title">{{ post.title }}</div>
+                        <li>
+                            <div class="time">{{ post.created }}</div>
+                            <div class="body">{{ post.tease }}</div>
+                            <div class="commentlink"><a href="{% url 'blog:post' post.pk %}">Read more..</a></div>
+                            <br/>
+                        </li>
+                </div>
+            {% endfor %}
+        </ul>
+        <!-- Next/Prev page links -->
+        {% if drafts.object_list and drafts.paginator.num_pages > 1 %}
+            <div class="pagination">
+                <span class="step-links">
+                    {% if drafts.has_previous %}
+                        <a href="?page={{ drafts.previous_page_number }}">newer entries &lt;&lt;</a>
+                    {% endif %}
+
+                <span class="current">
+                    &nbsp;Page {{ drafts.number }} of {{ drafts.paginator.num_pages }}
+                </span>
+
+                {% if drafts.has_next %}
+                    <a href="?page={{ drafts.next_page_number }}"> &gt;&gt older entries</a>
+                {% endif %}
+                </span>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

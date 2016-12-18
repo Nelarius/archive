@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Upload image</title>
+
+    <link href="{% static 'css/reset.css' %}" rel="stylesheet">
+    <link href="{% static 'css/identity.css' %}" rel="stylesheet" media="screen">
+</head>
+<body>
+
+{% if user.is_staff %}
+    <div class="text-box" style="margin: 60px;">
+        <h2>Add image</h2>
+            <br />
+            <form id="image_form" method="post" action="{% url 'blog:upload_image' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for hidden in image_form.hidden_fields %}
+                    {{ hidden }}
+                {% endfor %}
+                <ol>
+                    {% for field in image_form.visible_fields %}
+                        {{ field.errors }}
+                        {{ field.label }}{{ field.help_text }}
+                        <li>{{ field }}</li>
+                        <br />
+                    {% endfor %}
+                </ol>
+                <input type="submit" name="submit_image" value="Upload" />
+            </form>
+            <br />
+            <h4>Image code:</h4>
+            <br />
+            {{ code }}
+        </div>
+{% else %}
+    <p>You must be an admin to see this page.</p>
+{% endif %}
+
+</body>
+</html>

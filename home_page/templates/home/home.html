@@ -1,0 +1,65 @@
+{% extends 'home/base.html' %}
+
+{% load staticfiles %}
+{% block content %}
+    <div class="title lrg" style="padding: 10px;">Where science and software collide</div>
+    <div style="float:left; width:520px; margin-right:10px;">
+        <div class="text-box">
+            <h2>About me</h2>
+            <p>
+                Hi there! You've reached my home page.
+            </p>
+            <p>
+                I'm currently a junior graphics programmer at Umbra Software.
+            </p>
+            <p>
+                I have a Master's degree in theoretical physics with an emphasis on scientific computing. I like writing all kinds of software, but I usually gravitate to writing graphics/system stuff in the C++ language.
+            </p>
+            <p>
+                While you're here, check out my <a href="{% url 'blog:index' %}">blog</a>.
+            </p>
+        </div>
+        <br/>
+        <div class="text-box">
+            <h2>Other stuff</h2>
+            <p>When I'm not on the computer, I'm outside, riding this:</p>
+
+            <a href='/media/img/2015/08/08/my_roubaix.jpg' data-lightbox='ENTER GROUP' data-title='My Specialized Roubaix, 2014 edition'><img class='thumbnail' src=/media/img/2015/08/08/my_roubaix.jpg alt='test'></a>
+            <p>My biggest cycling achievement so far is completing the 217 km Pirkan Pyöräily, 2015 edition. I didn't place very well, but I finished the longest
+            bike ride of my life so far.</p>
+        </div>
+    </div>
+
+    <div style="float:left; width:520px; margin-left:10px;">
+        <div class="text-box" style="line-height: 1.2;">
+            <h2>Research</h2>
+            <h3>Physics</h3>
+            <p>
+                <b>Dislocation mechanisms on near surface voids</b> I performed molecular dynamics simulations on near surface voids under a tensile stress
+                in order to study the hypothesis that dislocations may be responsible for the onset of small surface protrusions. For more information, check out my 
+                <a href="http://nelarius.pythonanywhere.com/static/pdf/johann_muszynski_masters_thesis.pdf" target="_blank">Master's thesis</a>
+            </p>
+        </div>
+        <br/>
+        <div class="text-box">
+            <h2>Software</h2> 
+            <p>Here is some of the stuff that I've worked on.</p>
+            
+            <p><b>wrenly</b> C++ binding generator for the <a href="http://munificent.github.io/wren">Wren programming language</a>. The goal is to generate bindings for wrapping C++ types in a foreign class, and wrapping class methods and free functions in order to implement foreign methods. Source code is available <a href="https://github.com/Nelarius/wrenly" target="_blank"> here</a>.</p>
+            <p><b>morphoviewer.js</b> A javascript library for loading and displaying 3d models, in a number of different formats. 
+            The library can display various surface properties, such as the surface curvature and surface orientation. Source code available on
+            <a href="https://github.com/Nelarius/Morphoviewer" target="_blank">Github</a>.</p>
+            <p><b>secon</b> An agent-based economy simulation that I wrote in Lua, based on the work of 
+            <a href="http://www.cs.princeton.edu/~ken/scott.pdf" target="_blank">Steiglitz, Honig, and Cohen</a> and 
+            <a href="http://larc.unt.edu/techreports/LARC-2010-03.pdf" target="_blank">Doran and Parberry</a>. Source code available on 
+            <a href="https://github.com/Nelarius/secon" target="_blank">Github</a>. A presentation that I gave on this project (in finnish) is available
+            <a href="http://nelarius.pythonanywhere.com/static/pdf/esitelma_talous.pdf" target="_blank">here</a>.</p>
+        </div>
+    </div>
+
+    <div style="clear:both;"></div>
+    <script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>                                                                                                        
+     <script src="{% static 'js/lightbox.min.js' %}"></script>
+{% endblock %}
+
+

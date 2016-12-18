@@ -1,0 +1,31 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+    {% if user.is_staff %}
+        <form id="post_form" method="post" action="{% url 'blog:edit_post' post.slug %}">
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+
+            <div class="text-box">
+            <h2>Edit the post</h2>
+            <a class="button" href="{% url 'blog:delete_post' post.slug %}">Delete post</a>
+            <div style="clear: both;"></div>
+            <br>
+                <ol>
+                    {% for field in form.visible_fields %}
+                        {{ field.errors }}
+                        {{ field.label }}{{ field.help_text }}
+                        <li>{{ field }}</li>
+                        <br />
+                    {% endfor %}
+                </ol>
+                <br />
+                <input type="submit" name="submit" value="Save" />
+            </div>
+        </form>
+    {% else %}
+        You must be an admin to edit the post.
+    {% endif %}
+{% endblock %}
