@@ -1,0 +1,22 @@
+
+# Executables
+*.out
+*.app
+*.exe
+
+# 3d models
+*.obj
+*.mtl
+
+# Test, and temporary files
+*.hh
+*.cc
+
+# Project/library files/folders
+build/
+Objects/
+lib/
+bin/
+
+# Shell scripts
+*.sh
